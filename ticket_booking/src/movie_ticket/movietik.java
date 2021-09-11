@@ -376,8 +376,8 @@ public class movietik extends javax.swing.JFrame {
             
             for(int i=0; i<jTable1.getRowCount();i++)
             {
-                tickettype = (String)jTable1.getValueAt(1,0);
-                price = (int)jTable1.getValueAt(1, 1);
+                tickettype = (String)jTable1.getValueAt(i,0);
+                price = (int)jTable1.getValueAt(i, 1);
                 qty = (int)jTable1.getValueAt(i, 2);
                 total = (int)jTable1.getValueAt(i, 3);
                 
