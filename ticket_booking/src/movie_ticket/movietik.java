@@ -257,7 +257,7 @@ public class movietik extends javax.swing.JFrame {
         }
         
         
-       if(ch1.isSelected()){
+       if(ch2.isSelected()){
            
             String Balcony = ch2.getText();
             price= 400;
@@ -275,7 +275,7 @@ public class movietik extends javax.swing.JFrame {
             });
         }  
        
-       if(ch1.isSelected()){
+       if(ch3.isSelected()){
            
             String Box = ch3.getText();
             price= 500;
@@ -293,7 +293,7 @@ public class movietik extends javax.swing.JFrame {
             });
         }  
        
-       if(ch1.isSelected()){
+       if(ch4.isSelected()){
            
             String Sper_balcony = ch4.getText();
             price= 600;
