@@ -338,6 +338,10 @@ public class movietik extends javax.swing.JFrame {
    public void sales()
    {
        
+       String subtotal = txt_subtot.getText();
+       String pay = txt_pay.getText();
+       String tot = txt_balance.getText();
+       
        
        
        
