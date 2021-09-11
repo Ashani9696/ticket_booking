@@ -311,7 +311,12 @@ public class movietik extends javax.swing.JFrame {
             });
         }  
        
-        
+        for(int i=0; i<jTable1.getRowCount(); i++)
+        {
+            sum = sum + Integer.parseInt(jTable1.getValueAt(i, 3).toString());
+        }
+       
+       
         
         
         
