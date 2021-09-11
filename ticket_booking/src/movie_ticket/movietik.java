@@ -257,6 +257,64 @@ public class movietik extends javax.swing.JFrame {
         }
         
         
+       if(ch1.isSelected()){
+           
+            String Balcony = ch2.getText();
+            price= 400;
+            qu = Integer.parseInt(txt_bal.getValue().toString());
+            tot= price * qu;
+            
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]
+            {
+            Balcony,
+            price,
+            qu,
+            tot
+            });
+        }  
+       
+       if(ch1.isSelected()){
+           
+            String Box = ch3.getText();
+            price= 500;
+            qu = Integer.parseInt(txt_box.getValue().toString());
+            tot= price * qu;
+            
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]
+            {
+            Box,
+            price,
+            qu,
+            tot
+            });
+        }  
+       
+       if(ch1.isSelected()){
+           
+            String Sper_balcony = ch4.getText();
+            price= 600;
+            qu = Integer.parseInt(txt_superbal.getValue().toString());
+            tot= price * qu;
+            
+            
+            model = (DefaultTableModel)jTable1.getModel();
+            model.addRow(new Object[]
+            {
+            Sper_balcony,
+            price,
+            qu,
+            tot
+            });
+        }  
+       
+        
+        
+        
+        
     }//GEN-LAST:event_btn_addActionPerformed
 
     /**
