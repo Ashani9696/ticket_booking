@@ -376,10 +376,10 @@ public class movietik extends javax.swing.JFrame {
             
             for(int i=0; i<jTable1.getRowCount();i++)
             {
-                tickettype = (String)jTable1.getValueAt(1,1);
-                price = (int)jTable1.getValueAt(1, 2);
-                qty = (int)jTable1.getValueAt(i, 3);
-                total = (int)jTable1.getValueAt(i, 4);
+                tickettype = (String)jTable1.getValueAt(1,0);
+                price = (int)jTable1.getValueAt(1, 1);
+                qty = (int)jTable1.getValueAt(i, 2);
+                total = (int)jTable1.getValueAt(i, 3);
                 
                 pa2.setInt(1, lastid);
                 pa2.setString(2 , tickettype);
