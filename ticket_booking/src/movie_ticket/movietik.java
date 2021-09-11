@@ -316,6 +316,7 @@ public class movietik extends javax.swing.JFrame {
             sum = sum + Integer.parseInt(jTable1.getValueAt(i, 3).toString());
         }
        
+        txt_subtot.setText(String.valueOf(sum));
        
         
         
