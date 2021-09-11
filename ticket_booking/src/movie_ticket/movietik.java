@@ -6,7 +6,14 @@
 package movie_ticket;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import static java.sql.Statement.RETURN_GENERATED_KEYS;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -25,7 +32,7 @@ public class movietik extends javax.swing.JFrame {
     DefaultTableModel model = new DefaultTableModel();
     
     Connection con;
-    PreparedStatement pal;
+    PreparedStatement pat;
     
     PreparedStatement pa2;
     
@@ -341,8 +348,44 @@ public class movietik extends javax.swing.JFrame {
        String subtotal = txt_subtot.getText();
        String pay = txt_pay.getText();
        String tot = txt_balance.getText();
+       int lastid = 0;
        
-       
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/movieticket","root","");
+            String query = "insert into sales(subtotal,pay,balance)values (?,?,?)";
+            pat =  con.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
+            pat.setString(1,subtotal);
+             pat.setString(2,pay);
+              pat.setString(3,tot);
+              
+              pat.executeUpdate();
+           
+           ResultSet rs = pat.getGeneratedKeys();
+           if(rs.next()){
+               lastid  = rs.getInt(1);
+           }
+            int rows = jTable1.getRowCount();
+            String query1 = "insert into sale_pro(sale_id,ticket_type,qty,price,total)values(?,?,?,?)";
+            pa2 = con.prepareStatement(query1);
+            String tickettype = "";
+            int price;
+            int qty;
+            int total =0;
+            
+            for(int i=0; i<jTable1.getRowCount();i++)
+            {
+                tickettype = (String)jTable1.getValueAt(1,1);
+            }
+            
+            
+            
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(movietik.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(movietik.class.getName()).log(Level.SEVERE, null, ex);
+        }
        
        
        
