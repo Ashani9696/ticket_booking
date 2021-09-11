@@ -14,6 +14,7 @@ import java.sql.Statement;
 import static java.sql.Statement.RETURN_GENERATED_KEYS;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -378,9 +379,17 @@ public class movietik extends javax.swing.JFrame {
                 tickettype = (String)jTable1.getValueAt(1,1);
                 price = (int)jTable1.getValueAt(1, 2);
                 qty = (int)jTable1.getValueAt(i, 3);
-                qty = (int)jTable1.getValueAt(i, 4);
+                total = (int)jTable1.getValueAt(i, 4);
+                
+                pa2.setInt(1, lastid);
+                pa2.setString(2 , tickettype);
+                pa2.setInt(3 , qty);
+                pa2.setInt(4 , price);
+                pa2.setInt(5, total);
+                pa2.executeUpdate();
+                
             }
-            
+          JOptionPane.showMessageDialog(this, "Sales completed");
             
             
             
@@ -395,10 +404,13 @@ public class movietik extends javax.swing.JFrame {
    }
     private void btn_invoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_invoiceActionPerformed
         // TODO add your handling code here:
+        int sub = Integer.parseInt(txt_subtot.getText());
+        int pay = Integer.parseInt(txt_pay.getText());
+        int bal = pay - sub;
+        txt_balance.setText(String.valueOf(bal));
         
         
-        
-        
+        sales();
         
     }//GEN-LAST:event_btn_invoiceActionPerformed
 
