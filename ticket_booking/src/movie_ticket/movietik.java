@@ -5,6 +5,8 @@
  */
 package movie_ticket;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -21,6 +23,12 @@ public class movietik extends javax.swing.JFrame {
     }
     
     DefaultTableModel model = new DefaultTableModel();
+    
+    Connection con;
+    PreparedStatement pal;
+    
+    PreparedStatement pa2;
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -154,6 +162,11 @@ public class movietik extends javax.swing.JFrame {
         });
 
         btn_invoice.setText("Print Invoice");
+        btn_invoice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_invoiceActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Sub Total");
 
@@ -322,6 +335,22 @@ public class movietik extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btn_addActionPerformed
+   public void sales()
+   {
+       
+       
+       
+       
+       
+   }
+    private void btn_invoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_invoiceActionPerformed
+        // TODO add your handling code here:
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_btn_invoiceActionPerformed
 
     /**
      * @param args the command line arguments
